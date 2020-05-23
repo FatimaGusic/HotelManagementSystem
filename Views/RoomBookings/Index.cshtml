@@ -1,0 +1,66 @@
+﻿@model IEnumerable<HSM.Models.RoomBooking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignRoomId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfMembers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalAmount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignRoomId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfMembers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalAmount)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.BookingId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookingId })
+        </td>
+    </tr>
+}
+
+</table>
