@@ -1,0 +1,132 @@
+﻿@using HSM.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+    <title>Hotel Management System</title>
+
+    <style>
+        body {
+            background-image: url(../images/cover5.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="text-center">
+        <h1 class="display-4" style="color:white;">Hotel Management System</h1>
+        <p style="font-size: 24px; color:white;">
+            We help make you feel like you're at home.
+        </p>
+    </div>
+
+    <!-- Main navigation -->
+    <div class="container-fluid mt-3 mb-5">
+
+        <!-- Full Page Intro -->
+        <!-- Mask & flexbox options-->
+        <div class="mask d-flex justify-content-center align-items-center">
+            <!-- Content -->
+            <div class="container py-5 my-5">
+
+
+
+                <h3 style="color:white;">@ViewBag.Title.</h3>
+                <div class="row">
+                    <div class="col-md-8">
+                        <section id="loginForm">
+                            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <h4 style="color:white;">Use a local account to log in.</h4>
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                    <div class="col-md-10">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-6">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.RememberMe)
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-offset-2 col-md-6">
+                                        <div class="checkbox">
+                                            @Html.LabelFor(m => m.RememberMe)
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Log in" class="btn btn-default" />
+                                    </div>
+                                </div>
+                                <p>
+                                    @Html.ActionLink("Register as a new user", "Register")
+                                </p>
+
+                            }
+                        </section>
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+</body>
+</html>
+
+
+
+
