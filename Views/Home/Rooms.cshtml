@@ -1,0 +1,321 @@
+﻿
+@{
+    ViewBag.Title = "Rooms";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+
+      
+        .container {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e5e5e5;
+            color: black;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="container mt-5">
+
+
+        <!--Section: Content-->
+        <section class="text-center">
+
+            <!-- Section heading -->
+            <div class="text-center">
+                <h1 class="display-4">Rooms&Suites</h1>
+                <p style="font-size: 24px;">
+                    We help make you feel like you're at home.
+                </p>
+            </div>
+            <div class="container my-5 px-5 pt-5 pb-4 z-depth-1">
+
+
+                <!--Section: Content-->
+                <section class="dark-grey-text">
+
+                    <style>
+                        .d-grid {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-auto-rows: 100px;
+                            grid-gap: 7px;
+                        }
+
+                        .item {
+                            position: relative;
+
+                        }
+
+                            .item:nth-child(1) {
+                                grid-column: 1 / 2;
+                                grid-row: 1 / 4;
+                            }
+
+                            .item:nth-child(2) {
+                                grid-column: 2;
+                                grid-row: 0 / 3;
+                            }
+
+                            .item:nth-child(3) {
+                                grid-column: 2;
+                                grid-row: 2 / 3;
+                            }
+
+                            .item:nth-child(4) {
+                                grid-column: 2;
+                                grid-row: 3 / 3;
+                            }
+
+                            .item a {
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                top: 0;
+                                overflow: hidden;
+                            }
+
+                            .item img {
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                    </style>
+                    <hr />
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6 mb-4">
+                            <h2 class="font-weight-normal mb-4">Standard studio</h2>
+
+                            <p class="text-muted">
+                                Maximum  : 3 people<br />
+                                Each of the apartments covers an area of ​​22 - 24
+                                Equipped with a kitchenette, contains a TV, seating area, free wi-fi,
+                                air conditioning, safety deposit box, mini bar, private bathroom with hotel cosmetics and hairdryer.
+                            </p>
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+
+                            <div id="mdb-lightbox-ui"></div>
+
+                            <div class="d-grid mdb-lightbox">
+                                <figure class="item">
+                                    <a href="https://www.konceptresidence.ba/wp-content/uploads/2019/12/gallery2-6.png"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://www.konceptresidence.ba/wp-content/uploads/2019/12/gallery2-6.png" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/67371076_436442503865621_2955200046703837184_o.jpg?_nc_cat=103&_nc_sid=8024bb&_nc_ohc=yaXaiRAOvAUAX96KuIN&_nc_ht=scontent.fsjj1-1.fna&oh=47736552c4ad823a33064afcca35292c&oe=5EE14B21"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/67371076_436442503865621_2955200046703837184_o.jpg?_nc_cat=103&_nc_sid=8024bb&_nc_ohc=yaXaiRAOvAUAX96KuIN&_nc_ht=scontent.fsjj1-1.fna&oh=47736552c4ad823a33064afcca35292c&oe=5EE14B21" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/67088623_436444150532123_1720100682259759104_o.jpg?_nc_cat=104&_nc_sid=8024bb&_nc_ohc=hEIZ5jw13q8AX87MKo3&_nc_ht=scontent.fsjj1-1.fna&oh=72ee334b8d3946fa85793c043ff10b23&oe=5EE00200"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/67088623_436444150532123_1720100682259759104_o.jpg?_nc_cat=104&_nc_sid=8024bb&_nc_ohc=hEIZ5jw13q8AX87MKo3&_nc_ht=scontent.fsjj1-1.fna&oh=72ee334b8d3946fa85793c043ff10b23&oe=5EE00200" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-0/p640x640/67115960_436446237198581_8820409653864169472_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=fixB_EoNKCoAX9jLjVG&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=85b2688d5a1c741c6c71e7152c3238e2&oe=5EE03119"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-0/p640x640/67115960_436446237198581_8820409653864169472_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=fixB_EoNKCoAX9jLjVG&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=85b2688d5a1c741c6c71e7152c3238e2&oe=5EE03119" />
+                                    </a>
+                                </figure>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <hr />
+                    <hr />
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6 mb-4">
+                            <h2 class="font-weight-normal mb-4">Deluxe apartment</h2>
+
+                            <p class="text-muted">
+                                Maximum : 8 people<br />
+                                The apartment extends to a floor area of 125m2, which includes three classic bedrooms with king size and twin beds,
+                                a living room with king size bed, sofa, kitchen area with oven, cooking plate, cooking stove, kitchen utensils and table for dining.
+                                Apartments have 4 bathrooms, so each room has a separate bathroom
+                            </p>
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+
+                            <div id="mdb-lightbox-ui"></div>
+
+                            <div class="d-grid mdb-lightbox">
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/p960x960/37823696_218395889003618_8629413570607579136_o.jpg?_nc_cat=111&_nc_sid=2d5d41&_nc_ohc=kjFcxqziBF0AX8OwoA6&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=5b0934a46ea80ab3145374d1eab72643&oe=5EE156BE"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/p960x960/37823696_218395889003618_8629413570607579136_o.jpg?_nc_cat=111&_nc_sid=2d5d41&_nc_ohc=kjFcxqziBF0AX8OwoA6&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=5b0934a46ea80ab3145374d1eab72643&oe=5EE156BE" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-0/p640x640/66904463_436443510532187_570694307736977408_o.jpg?_nc_cat=104&_nc_sid=8024bb&_nc_ohc=FzddVDWUOTcAX-Ai7A9&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=160c91ea5e4fd28a61304e84cc55d07b&oe=5EE1BA9D"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-0/p640x640/66904463_436443510532187_570694307736977408_o.jpg?_nc_cat=104&_nc_sid=8024bb&_nc_ohc=FzddVDWUOTcAX-Ai7A9&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=160c91ea5e4fd28a61304e84cc55d07b&oe=5EE1BA9D" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/67166359_436440663865805_5939883493411520512_o.jpg?_nc_cat=101&_nc_sid=8024bb&_nc_ohc=145wHJFITigAX-fdkNl&_nc_ht=scontent.fsjj1-1.fna&oh=e620238eb18174ae4c2fb8f6be4fe926&oe=5EE30D64"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/67166359_436440663865805_5939883493411520512_o.jpg?_nc_cat=101&_nc_sid=8024bb&_nc_ohc=145wHJFITigAX-fdkNl&_nc_ht=scontent.fsjj1-1.fna&oh=e620238eb18174ae4c2fb8f6be4fe926&oe=5EE30D64" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33303708_162614387915102_6671920081573773312_o.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_ohc=as3EEO_3eGcAX9mdpYe&_nc_ht=scontent.fsjj1-1.fna&oh=ac27997e7b16422159d81bcb46a734f4&oe=5EDFB3B1"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33303708_162614387915102_6671920081573773312_o.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_ohc=as3EEO_3eGcAX9mdpYe&_nc_ht=scontent.fsjj1-1.fna&oh=ac27997e7b16422159d81bcb46a734f4&oe=5EDFB3B1" />
+                                    </a>
+                                </figure>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <hr />
+                    <hr />
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6 mb-4">
+                            <h2 class="font-weight-normal mb-4">Luxury Apartment</h2>
+
+                            <p class="text-muted">
+                                Maximum : 4 people<br />
+                                Each of the apartments extends to a floor area of 56m2, equipped with a mini kitchen, a TV, a seating area,
+                                free wi-fi, air conditioning, safe, mini bar, private bathroom with hotel cosmetics and hairdryer.
+                                All Luxury apartments have views of the city, and are suitable for 4 people or families with children.
+                                The combination combinations are as follows:
+                                – classic bedroom with king-size bed and living room with 1 sofa
+                                – Classic bedroom with king-size bed and twin bed
+                            </p>
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+
+                            <div id="mdb-lightbox-ui"></div>
+
+                            <div class="d-grid mdb-lightbox">
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/72537088_495615357948335_41409768270594048_n.jpg?_nc_cat=108&_nc_sid=8024bb&_nc_ohc=GqkP1hGd7UEAX-qRVN0&_nc_ht=scontent.fsjj1-1.fna&oh=43e3f5e66caf6b81ab19fcdf37d5aaa3&oe=5EE131C7"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/72537088_495615357948335_41409768270594048_n.jpg?_nc_cat=108&_nc_sid=8024bb&_nc_ohc=GqkP1hGd7UEAX-qRVN0&_nc_ht=scontent.fsjj1-1.fna&oh=43e3f5e66caf6b81ab19fcdf37d5aaa3&oe=5EE131C7" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/p960x960/79644586_539139296929274_5068151925715763200_o.jpg?_nc_cat=102&_nc_sid=2d5d41&_nc_ohc=4KJO2inzqX4AX-tXgbH&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=8267609ea40b1ac4db82566668d9019a&oe=5EE23F77"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/p960x960/79644586_539139296929274_5068151925715763200_o.jpg?_nc_cat=102&_nc_sid=2d5d41&_nc_ohc=4KJO2inzqX4AX-tXgbH&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=8267609ea40b1ac4db82566668d9019a&oe=5EE23F77" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/69717256_467907794052425_6773664609820737536_n.png?_nc_cat=103&_nc_sid=8024bb&_nc_ohc=i1e1pNJzaCEAX-egh9f&_nc_ht=scontent.fsjj1-1.fna&oh=dc3fd55349aee480673e0a79c7b1300f&oe=5EE0A5D5"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/69717256_467907794052425_6773664609820737536_n.png?_nc_cat=103&_nc_sid=8024bb&_nc_ohc=i1e1pNJzaCEAX-egh9f&_nc_ht=scontent.fsjj1-1.fna&oh=dc3fd55349aee480673e0a79c7b1300f&oe=5EE0A5D5" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/p960x960/37757620_218395522336988_8173928595194904576_o.jpg?_nc_cat=105&_nc_sid=2d5d41&_nc_ohc=DSHLmiHipQEAX-XnMj-&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=f2a9b5b4bd450a0ed97737cdc70889ff&oe=5EE255B7"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/p960x960/37757620_218395522336988_8173928595194904576_o.jpg?_nc_cat=105&_nc_sid=2d5d41&_nc_ohc=DSHLmiHipQEAX-XnMj-&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=f2a9b5b4bd450a0ed97737cdc70889ff&oe=5EE255B7" />
+                                    </a>
+                                </figure>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <hr />
+                    <hr />
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6 mb-4">
+                            <h2 class="font-weight-normal mb-4">Rooftop Apartment</h2>
+
+                            <p class="text-muted">
+                                Maximum : 8 people<br />
+                                The apartment extends to a floor area of 125m2, which includes three classic bedrooms with king size and twin beds,
+                                a living room with king size bed, sofa, kitchen area with oven, cooking plate, cooking stove, kitchen utensils and table for dining.
+                                Apartments have 4 bathrooms, so each room has a separate bathroom
+                            </p>
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+
+                            <div id="mdb-lightbox-ui"></div>
+
+                            <div class="d-grid mdb-lightbox">
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/72921770_494778668032004_1750996808676409344_n.png?_nc_cat=103&_nc_sid=8024bb&_nc_ohc=GKS2309mebEAX-DYqa-&_nc_ht=scontent.fsjj1-1.fna&oh=f6544d5b4b9b5f0b827f2af917085dd4&oe=5EE307AA"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/72921770_494778668032004_1750996808676409344_n.png?_nc_cat=103&_nc_sid=8024bb&_nc_ohc=GKS2309mebEAX-DYqa-&_nc_ht=scontent.fsjj1-1.fna&oh=f6544d5b4b9b5f0b827f2af917085dd4&oe=5EE307AA" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33400740_162613931248481_6342726502081101824_o.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_ohc=cvIgYCfRNcMAX-zS2iQ&_nc_ht=scontent.fsjj1-1.fna&oh=5bbbdeaad4725d1836a69924d450118e&oe=5EE2CD77"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33400740_162613931248481_6342726502081101824_o.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_ohc=cvIgYCfRNcMAX-zS2iQ&_nc_ht=scontent.fsjj1-1.fna&oh=5bbbdeaad4725d1836a69924d450118e&oe=5EE2CD77" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33139993_162613617915179_3259005902711160832_o.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=ztTaRkFujvYAX8q5KxB&_nc_ht=scontent.fsjj1-1.fna&oh=8617732492c68687ce4d3dc1617ffa58&oe=5EE1891F"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33139993_162613617915179_3259005902711160832_o.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=ztTaRkFujvYAX8q5KxB&_nc_ht=scontent.fsjj1-1.fna&oh=8617732492c68687ce4d3dc1617ffa58&oe=5EE1891F" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33186833_162614124581795_4179619395145826304_o.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_ohc=iiXTsSYaETIAX9fBNa7&_nc_ht=scontent.fsjj1-1.fna&oh=02e762c66da6fb2affac1a1a1c6433e2&oe=5EE1847B"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33186833_162614124581795_4179619395145826304_o.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_ohc=iiXTsSYaETIAX9fBNa7&_nc_ht=scontent.fsjj1-1.fna&oh=02e762c66da6fb2affac1a1a1c6433e2&oe=5EE1847B" />
+                                    </a>
+                                </figure>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+                <!--Section: Content-->
+
+
+            </div>
+           
+
+       </section>
+
+
+    </div>
+
+
+</body>
+</html>
+
