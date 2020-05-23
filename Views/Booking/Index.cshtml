@@ -1,0 +1,266 @@
+﻿@model HSM.ViewModel.BookingViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+    <head>
+        <style>
+            body {
+                background-image: url('../../images/startup-593327_1280.jpg');
+              
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .container {
+                position: relative;
+                font-family: Arial;
+            }
+
+            .text-block {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                background-color: #e5e5e5;
+                color: black;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        </style>
+    </head>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#txtBookingId").val("0");
+        $("#btnSave").click(function () {
+            AddCustomerBooking();
+        });
+
+    });
+
+
+
+
+    function AddCustomerBooking() {
+        var formData = new FormData;
+        formData.append("BookingId", $("#txtBookingId").val());
+        formData.append("CustomerName", $("#txtCustomerName").val());
+        formData.append("CustomerAddress", $("#txtCustomerAddress").val());
+        formData.append("BookingFrom", $("#txtBookingFrom").val());
+        formData.append("BookingTo", $("#txtBookingTo").val());
+        formData.append("AssignRoomId", $("#ddAssignRoomId").val());
+        formData.append("NumberOfMembers", $("#txtNumberOfMembers").val());
+
+
+        $.ajax({
+            async: true,
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function (data) {
+                if (data.success === true) {
+                    alert(data.message);
+                    ResetRoomInformation();
+
+                }
+            },
+            error: function () {
+                alert('There is some problem to precess your request. Please try again.');
+            }
+        });
+    }
+
+    function ResetRoomInformation() {
+        $("#txtBookingId").val(0);
+        $("#txtCustomerName").val('');
+        $("#txtCustomerAddress").val('');
+        $("#ddAssignRoomId").val(1);
+        $("#txtNumberOfMembers").val('');
+        $("#txtCustomerName").focus();
+        $("#btnSave").val("Save");
+
+
+
+    }
+
+</script>
+
+
+
+<style>
+    .form-control {
+        width: 500px;
+    }
+</style>
+<div id="divNewBooking" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class=" modal-content">
+            <div class=" modal-header">
+                <button type="button" class="close" data-dismiss="modal"> &times;</button>
+                <h4 class="modal-title">Booking</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    @Html.HiddenFor(model => model.BookingId, new { @id = "txtBookingId" })
+                    <div class="form-group">
+                        @Html.LabelFor(expression: model => model.CustomerName)
+                        @Html.TextBoxFor(expression: model => model.CustomerName, htmlAttributes: new { @class = "form-control", @id = "txtCustomerName" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(expression: model => model.CustomerAddress)
+                        @Html.TextBoxFor(expression: model => model.CustomerAddress, htmlAttributes: new { @class = "form-control", @id = "txtCustomerAddress" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(expression: model => model.BookingFrom)
+                        @Html.EditorFor(expression: model => model.BookingFrom, additionalViewData: new { htmlAttributes = new { Value = Model.BookingFrom.ToString(format: "dd-MMM-yyyy"), @class = "form-control datepicker", @id = "txtBookingFrom" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(expression: model => model.BookingTo)
+                        @Html.EditorFor(expression: model => model.BookingTo, additionalViewData: new { htmlAttributes = new { Value = Model.BookingFrom.ToString(format: "dd-MMM-yyyy"), @class = "form-control datepicker", @id = "txtBookingTo" } })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(expression: model => model.AssignRoomId)
+                        @Html.DropDownListFor(expression: model => model.AssignRoomId, selectList: @Model.ListOfRooms, htmlAttributes: new { @class = "form-control", @id = "ddAssignRoom" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(expression: model => model.NumberOfMembers)
+                        @Html.TextBoxFor(expression: model => model.NumberOfMembers, htmlAttributes: new { @class = "form-control", @id = "txtNumberOfMembers" })
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnSave" type="button" class=" btn btn-success">Save</button> &nbsp;
+                <button type="button" data-dismiss="modal" class=" btn btn-danger">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div style="margin-top:50px">
+
+</div>
+
+
+<body>
+    <div class="container mt-5">
+
+
+        <!--Section: Content-->
+        <section class="text-center">
+
+            <!-- Section heading -->
+            <div class="text-center">
+                <h1 class="display-4" style="color:white;">Booking</h1>
+                <p style="font-size: 24px; color:white;">
+                    We help make you feel like you're at home.
+                </p>
+            </div>
+            <div class="container my-5 px-5 pt-5 pb-4 z-depth-1">
+
+
+                <!--Section: Content-->
+                <section class="dark-grey-text">
+
+                    <style>
+                        .d-grid {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-auto-rows: 100px;
+                            grid-gap: 7px;
+                        }
+
+                        .item {
+                            position: relative;
+                        }
+
+                            .item:nth-child(1) {
+                                grid-column: 1 / 2;
+                                grid-row: 1 / 4;
+                            }
+
+                            .item:nth-child(2) {
+                                grid-column: 2;
+                                grid-row: 0 / 3;
+                            }
+
+                            .item:nth-child(3) {
+                                grid-column: 2;
+                                grid-row: 2 / 3;
+                            }
+
+                            .item:nth-child(4) {
+                                grid-column: 2;
+                                grid-row: 3 / 3;
+                            }
+
+                            .item a {
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                top: 0;
+                                overflow: hidden;
+                            }
+
+                            .item img {
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                    </style>
+                    <hr />
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6 mb-4">
+                            <h2 class="font-weight-normal mb-4" style="color:white;">Book your room now!</h2>
+
+                            <div style="margin-top:20px">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#divNewBooking" data-backdrop="static" data-keyboard="false">New Booking</button>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+
+                            <div id="mdb-lightbox-ui"></div>
+
+                            <div class="d-grid mdb-lightbox">
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33216351_162614281248446_1441093795620847616_n.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_ohc=T8P3bdzqp5cAX8cYyAG&_nc_ht=scontent.fsjj1-1.fna&oh=49273e9e9c03a8aa4646f3077d69d34a&oe=5EE267A1"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33216351_162614281248446_1441093795620847616_n.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_ohc=T8P3bdzqp5cAX8cYyAG&_nc_ht=scontent.fsjj1-1.fna&oh=49273e9e9c03a8aa4646f3077d69d34a&oe=5EE267A1" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/33139993_162613617915179_3259005902711160832_o.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=Cey2Q_lkD1oAX-aXneT&_nc_ht=scontent.fsjj1-1.fna&oh=ae654be5f2ab3d839c216ca14777e5ee&oe=5EE1891F"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/67371076_436442503865621_2955200046703837184_o.jpg?_nc_cat=103&_nc_sid=8024bb&_nc_ohc=yaXaiRAOvAUAX96KuIN&_nc_ht=scontent.fsjj1-1.fna&oh=47736552c4ad823a33064afcca35292c&oe=5EE14B21" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/p960x960/37757620_218395522336988_8173928595194904576_o.jpg?_nc_cat=105&_nc_sid=2d5d41&_nc_ohc=DSHLmiHipQEAX-XnMj-&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=f2a9b5b4bd450a0ed97737cdc70889ff&oe=5EE255B7"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-9/p960x960/37757620_218395522336988_8173928595194904576_o.jpg?_nc_cat=105&_nc_sid=2d5d41&_nc_ohc=DSHLmiHipQEAX-XnMj-&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=f2a9b5b4bd450a0ed97737cdc70889ff&oe=5EE255B7" />
+                                    </a>
+                                </figure>
+                                <figure class="item">
+                                    <a href="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-0/p640x640/67115960_436446237198581_8820409653864169472_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=fixB_EoNKCoAX9jLjVG&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=85b2688d5a1c741c6c71e7152c3238e2&oe=5EE03119"
+                                       class="z-depth-1 rounded" data-size="1600x1067">
+                                        <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.0-0/p640x640/67115960_436446237198581_8820409653864169472_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=fixB_EoNKCoAX9jLjVG&_nc_ht=scontent.fsjj1-1.fna&_nc_tp=6&oh=85b2688d5a1c741c6c71e7152c3238e2&oe=5EE03119" />
+                                    </a>
+                                </figure>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+                </div>
+            </section>
+        </div>
+</body>
