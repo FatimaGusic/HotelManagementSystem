@@ -1,0 +1,36 @@
+﻿@model IEnumerable<HSM.Models.ApplicationUser>
+@{
+    ViewBag.Title = "ListUsers";
+}
+
+<h2>ListUsers</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+    </tr>
+    
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>
+                    <form action="@Url.Action("ManageUserRoles", "RolesAdmin")" method="post" class="form-inline">
+                        <input type="hidden" id="UserName" name="UserName" value="@item.UserName"/>
+                        <button type="submit" class="btn btn-primary">Manager Roles</button>
+                    </form> 
+                </td>
+                <td>
+                    @Html.ActionLink("Reset Password", "ResetPassword", "RoleAdmin", new{ id = item.Id }, new {@class="btn btn-primary"})
+
+
+
+                </td>
+            </tr>
+        }
+    
+
+
+</table>
